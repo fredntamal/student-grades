@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Mark on 30/10/2018.
+ */
+public class Test2 {
+
+    public static void main(String[] args) {
+
+        ArrayList<Undergraduate> students = new ArrayList<>();
+
+        int[] gradeScoresArray = {40, 50, 45, 65, 45, 35, 70, 60, 55, 80};
+
+        Undergraduate mark = new Undergraduate("Mark Vickers", 12143524, "DT249", 2, true,
+                "Stream name", "final project name");
+        for (int i = 0; i < 10; i++) {
+            mark.setGradeList(gradeScoresArray[i]);
+        }
+        Undergraduate mel = new Undergraduate("Mel Brennan", 14135778, " DT249", 1, true,
+                "stream name", "project name");
+        for (int i = 0; i < 10; i++) {
+            mel.setGradeList(gradeScoresArray[i]);
+        }
+        System.out.println("Student name = " + mark.getName());
+        System.out.println("Student number  = " + mark.getStudentNumber());
+        System.out.println("Course name = " + mark.getCourse());
+        System.out.println("Current Year = " + mark.getCurrentYear());
+        System.out.println("Registered = " + mark.getRegistrationStatus());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%d ", mark.getGradeList(i));
+        }
+        System.out.println();
+        mark.lowGrade();
+        mark.displayInitials();
+        System.out.println();
+
+        System.out.println("Student name = " + mel.getName());
+        System.out.println("Student number  = " + mel.getStudentNumber());
+        System.out.println("Course name = " + mel.getCourse());
+        System.out.println("Current Year = " + mel.getCurrentYear());
+        System.out.println("Registered = " + mel.getRegistrationStatus());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%d ", mel.getGradeList(i));
+        }
+        System.out.println();
+        mel.lowGrade();
+        mel.displayInitials();
+        System.out.println();
+
+
+
+    }
+}

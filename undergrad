@@ -1,0 +1,52 @@
+public class Undergraduate extends Student{
+
+
+    // class fields
+
+    private String stream;
+    private String finalYearProject;
+
+    // construcutor calling super class
+
+    public Undergraduate() {
+        super();
+    }
+
+    // getter and setters for all fields of Undergraduate class
+
+    public String getStream() {
+        return this.stream;
+    }
+    public String getFinalYearProject() {
+        return this.finalYearProject;
+    }
+    public void setStream(String stream) {
+        this.stream = stream;
+    }
+    public void setFinalYearProject(String finalYearProject) {
+        this.finalYearProject = finalYearProject;
+    }
+
+    // method to display initials of Student
+
+    public String displayInitials(){
+        String name = this.getName();
+        String initials = Character.toString(name.charAt(0));
+        int nameLength = name.length();
+
+        for (int i = 0; i < nameLength; i++) {
+            if (name.charAt(i) == ' ') {
+                initials += name.charAt(i + 1);
+                System.out.printf("%s ", initials);
+            }
+        }return initials;
+    }
+
+    // method to display warning if studnets avergae grade is less than 50
+
+    public void lowGrade() {
+        if (this.calculateGradeAverage() < 50) {
+            System.out.println(this.getName() + " average grade is " + this.assignGrade());
+        }
+    }
+}

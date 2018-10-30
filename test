@@ -1,0 +1,61 @@
+import javax.swing.*;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        Undergraduate mark = new Undergraduate();
+
+        mark.setName("Mark Vickers");
+        mark.setStudentNumber(17125508);
+        mark.setCourse("DT249");
+        mark.setCurrentYear(2);
+        mark.setRegistrationStatus(true);
+
+        int[] markArray = {40, 45, 50, 55, 50, 45, 50, 55, 50, 40};
+        for (int i = 0; i < 10; i++) {
+            mark.setGradeList(markArray[i]);
+        }
+
+        Undergraduate pupil = new Undergraduate();
+
+        pupil.setName("Scott Clarke");
+        pupil.setStudentNumber(47389658);
+        pupil.setCourse("DT492");
+        pupil.setCurrentYear(4);
+        pupil.setRegistrationStatus(false);
+
+        int[] pupArray = {40, 45, 50, 55, 50, 45, 50, 55, 50, 40};
+        for (int i = 0; i < 10; i++) {
+            pupil.setGradeList(pupArray[i]);
+        }
+
+        System.out.println("Student name = " + mark.getName());
+        System.out.println("Student number  = " + mark.getStudentNumber());
+        System.out.println("Course name = " + mark.getCourse());
+        System.out.println("Current Year = " + mark.getCurrentYear());
+        System.out.println("Registered = " + mark.getRegistrationStatus());
+
+        for (int i = 0; i < 10; i++) {
+            System.out.printf("%d ", mark.getGradeList(i));
+        }
+        System.out.println();
+        mark.lowGrade();
+        mark.displayInitials();
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Student name = " + pupil.getName());
+        System.out.println("Student number  = " + pupil.getStudentNumber());
+        System.out.println("Course name = " + pupil.getCourse());
+        System.out.println("Current Year = " + pupil.getCurrentYear());
+        System.out.println("Registered = " + pupil.getRegistrationStatus());
+
+            for (int i = 0; i < 10; i++) {
+                System.out.printf("%d ", pupil.getGradeList(i));
+            }
+        System.out.println();
+        pupil.lowGrade();
+        pupil.displayInitials();
+    }
+}

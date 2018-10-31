@@ -1,0 +1,303 @@
+public class test6 {
+
+    public static void main(String[] args) {
+
+        int highestAverageMark;
+        int highestAverageStream;
+
+        Undergraduate students[] = new Undergraduate[20];
+
+        for (int i = 0; i < students.length; i++) {
+            students[i] = new Undergraduate();
+        }
+
+        students[0].setName("Mark Vickers");
+        students[0].setStudentNumber(17125508);
+        students[0].setCourse("DT249");
+        students[0].setCurrentYear(2);
+        students[0].setRegistrationStatus(true);
+        int[] stud0 = {40, 45, 80, 70, 70, 80, 90, 55, 85, 75};
+        for (int i = 0; i < 10; i++) {
+            students[0].setGradeList(stud0[i]);
+        }
+        students[0].setStream("Software Development");
+        students[0].setFinalYearProject("Ableton");
+
+        students[1].setName("Mel Brennan");
+        students[1].setStudentNumber(15137762);
+        students[1].setCourse("DT249");
+        students[1].setCurrentYear(2);
+        students[1].setRegistrationStatus(true);
+        int[] stud1 = {40, 45, 50, 65, 40, 40, 40, 40, 60, 50};
+        for (int i = 0; i < 10; i++) {
+            students[1].setGradeList(stud1[i]);
+        }
+        students[1].setStream("Software Development");
+        students[1].setFinalYearProject("Books");
+
+        students[2].setName("Ian Alvey");
+        students[2].setStudentNumber(18124407);
+        students[2].setCourse("DT255");
+        students[2].setCurrentYear(3);
+        students[2].setRegistrationStatus(true);
+        int[] stud2 = {40, 40, 40, 40, 40, 50, 50, 50, 40, 40};
+        for (int i = 0; i < 10; i++) {
+            students[2].setGradeList(stud2[i]);
+        }
+        students[2].setStream("Databases");
+        students[2].setFinalYearProject("Wine Database");
+
+        students[3].setName("Libby Keenen");
+        students[3].setStudentNumber(22481256);
+        students[3].setCourse("DT249");
+        students[3].setCurrentYear(1);
+        students[3].setRegistrationStatus(true);
+        int[] stud3 = {50, 55, 45, 60, 40, 40, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[3].setGradeList(stud3[i]);
+        }
+        students[3].setStream("Software Development");
+        students[3].setFinalYearProject("Dating App");
+
+        students[4].setName("Paul Earls");
+        students[4].setStudentNumber(45123476);
+        students[4].setCourse("DT249");
+        students[4].setCurrentYear(3);
+        students[4].setRegistrationStatus(true);
+        int[] stud4 = {70, 55, 45, 60, 90, 40, 80, 45, 50, 65};
+        for (int i = 0; i < 10; i++) {
+            students[4].setGradeList(stud4[i]);
+        }
+        students[4].setStream("Software Development");
+        students[4].setFinalYearProject("Accountancy Software");
+
+        students[5].setName("Keith Walsh");
+        students[5].setStudentNumber(54800123);
+        students[5].setCourse("DT249");
+        students[5].setCurrentYear(1);
+        students[5].setRegistrationStatus(true);
+        int[] stud5 = {40, 55, 45, 40, 40, 40, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[5].setGradeList(stud5[i]);
+        }
+        students[5].setStream("Big Data");
+        students[5].setFinalYearProject("Car Mileage Data");
+
+        students[6].setName("Ross Murray");
+        students[6].setStudentNumber(44802172);
+        students[6].setCourse("DT249");
+        students[6].setCurrentYear(3);
+        students[6].setRegistrationStatus(true);
+        int[] stud6 = {60, 65, 85, 60, 70, 40, 60, 45, 90, 45};
+        for (int i = 0; i < 10; i++) {
+            students[6].setGradeList(stud6[i]);
+        }
+        students[6].setStream("Big Data");
+        students[6].setFinalYearProject("Bar Stock Data");
+
+        students[7].setName("Cian Byrne");
+        students[7].setStudentNumber(90854172);
+        students[7].setCourse("DT255");
+        students[7].setCurrentYear(12);
+        students[7].setRegistrationStatus(true);
+        int[] stud7 = {50, 55, 45, 60, 50, 40, 40, 65, 50, 55};
+        for (int i = 0; i < 10; i++) {
+            students[7].setGradeList(stud7[i]);
+        }
+        students[7].setStream("Big Data");
+        students[7].setFinalYearProject("Rugby Zone Stats");
+
+        students[8].setName("Sean Dunne");
+        students[8].setStudentNumber(55214673);
+        students[8].setCourse("DT249");
+        students[8].setCurrentYear(4);
+        students[8].setRegistrationStatus(true);
+        int[] stud8 = {60, 55, 75, 60, 80, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[8].setGradeList(stud8[i]);
+        }
+        students[8].setStream("Databases");
+        students[8].setFinalYearProject("Eye Scan Data");
+
+        students[9].setName("Peter Duffy");
+        students[9].setStudentNumber(88765943);
+        students[9].setCourse("DT249");
+        students[9].setCurrentYear(2);
+        students[9].setRegistrationStatus(true);
+        int[] stud9 = {40, 55, 45, 50, 50, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[9].setGradeList(stud9[i]);
+        }
+        students[9].setStream("Databases");
+        students[9].setFinalYearProject("Wicklow Rugby History");
+
+        students[10].setName("Brian Doyle");
+        students[10].setStudentNumber(99765832);
+        students[10].setCourse("DT255");
+        students[10].setCurrentYear(1);
+        students[10].setRegistrationStatus(true);
+        int[] stud10 = {60, 55, 75, 60, 40, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[10].setGradeList(stud10[i]);
+        }
+        students[10].setStream("Project Management");
+        students[10].setFinalYearProject("GAA Application");
+
+        students[11].setName("Kurt Byrne");
+        students[11].setStudentNumber(55214673);
+        students[11].setCourse("DT249");
+        students[11].setCurrentYear(4);
+        students[11].setRegistrationStatus(true);
+        int[] stud11 = {60, 55, 45, 60, 40, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[11].setGradeList(stud11[i]);
+        }
+        students[11].setStream("Databases");
+        students[11].setFinalYearProject("Eye Scan Data");
+
+        students[12].setName("Larry Maguire");
+        students[12].setStudentNumber(55214673);
+        students[12].setCourse("DT249");
+        students[12].setCurrentYear(4);
+        students[12].setRegistrationStatus(true);
+        int[] stud12 = {40, 55, 55, 60, 50, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[12].setGradeList(stud12[i]);
+        }
+        students[12].setStream("Software Engineering");
+        students[12].setFinalYearProject("Golf Course Project");
+
+        students[13].setName("Barry Jameson");
+        students[13].setStudentNumber(55214673);
+        students[13].setCourse("DT249");
+        students[13].setCurrentYear(4);
+        students[13].setRegistrationStatus(true);
+        int[] stud13 = {60, 55, 75, 60, 80, 50, 40, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[13].setGradeList(stud13[i]);
+        }
+        students[13].setStream("Software Engineering");
+        students[13].setFinalYearProject("Car Engine Revamp");
+
+        students[14].setName("Sue Jameson");
+        students[14].setStudentNumber(55214673);
+        students[14].setCourse("DT249");
+        students[14].setCurrentYear(4);
+        students[14].setRegistrationStatus(true);
+        int[] stud14 = {60, 55, 45, 60, 40, 50, 40, 45, 40, 45};
+        for (int i = 0; i < 10; i++) {
+            students[14].setGradeList(stud14[i]);
+        }
+        students[14].setStream("Software Engineering");
+        students[14].setFinalYearProject("Accountancy Software");
+
+        students[15].setName("Kate Dunne");
+        students[15].setStudentNumber(22331144);
+        students[15].setCourse("DT249");
+        students[15].setCurrentYear(2);
+        students[15].setRegistrationStatus(true);
+        int[] stud15 = {60, 75, 75, 60, 80, 50, 40, 75, 90, 45};
+        for (int i = 0; i < 10; i++) {
+            students[15].setGradeList(stud15[i]);
+        }
+        students[15].setStream("Software Engineering");
+        students[15].setFinalYearProject("Animal Zoo Project");
+
+        students[16].setName("Harry Walsh");
+        students[16].setStudentNumber(55887964);
+        students[16].setCourse("DT249");
+        students[16].setCurrentYear(3);
+        students[16].setRegistrationStatus(true);
+        int[] stud16 = {90, 85, 75, 60, 80, 80, 46, 45, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[16].setGradeList(stud16[i]);
+        }
+        students[16].setStream("Big Data");
+        students[16].setFinalYearProject("Lego Stats");
+
+        students[17].setName("Drew Murphy");
+        students[17].setStudentNumber(77225544);
+        students[17].setCourse("DT249");
+        students[17].setCurrentYear(2);
+        students[17].setRegistrationStatus(true);
+        int[] stud17 = {60, 75, 75, 60, 80, 80, 60, 65, 50, 45};
+        for (int i = 0; i < 10; i++) {
+            students[17].setGradeList(stud17[i]);
+        }
+        students[17].setStream("Project Management");
+        students[17].setFinalYearProject("Dinosaur Research Application");
+
+        students[18].setName("Paul Doyle");
+        students[18].setStudentNumber(77885641);
+        students[18].setCourse("DT249");
+        students[18].setCurrentYear(3);
+        students[18].setRegistrationStatus(true);
+        int[] stud18 = {60, 55, 75, 60, 50, 50, 70, 45, 70, 45};
+        for (int i = 0; i < 10; i++) {
+            students[18].setGradeList(stud18[i]);
+        }
+        students[18].setStream("Project Management");
+        students[18].setFinalYearProject("Insurance Application");
+
+        students[19].setName("Niall Bunn");
+        students[19].setStudentNumber(99127890);
+        students[19].setCourse("DT249");
+        students[19].setCurrentYear(1);
+        students[19].setRegistrationStatus(true);
+        int[] stud19 = {40, 45, 45, 40, 40, 40, 40, 45, 40, 45};
+        for (int i = 0; i < 10; i++) {
+            students[19].setGradeList(stud19[i]);
+        }
+        students[19].setStream("Project Management");
+        students[19].setFinalYearProject("Farming Development");
+
+        for (int i = 0; i < students.length; i++) {
+            System.out.println("Name: " + students[i].getName() + "\n" + "Student Number: " +
+                    students[i].getStudentNumber() + "\n" + "Course: " + students[i].getCourse() + "\n"
+            + "Current Year: " + students[i].getCurrentYear() + "\n" + "Registration: " +
+            students[i].getRegistrationStatus() + "\n" + "Stream: " + students[i].getStream() + "\n" +
+                    "Final Year Project: " + students[i].getFinalYearProject()
+            + "\n");
+            for (int j = 0; j < 10; j++) {
+                System.out.printf("%d ", students[i].getGradeList(j));
+            }
+        }
+
+        /*
+        System.out.println();
+        students[0].lowGrade();
+        students[0].displayInitials();
+        System.out.println();
+        System.out.println();
+
+        System.out.println();
+        students[1].lowGrade();
+        students[1].displayInitials();
+        System.out.println();
+        System.out.println();
+        students[0].highestAverageSoftDevelopment();
+        */
+
+        /*for (Undergraduate student: students) {
+            System.out.println(student.getFinalYearProject());
+        }*/
+    }
+
+        public void highestAverageOverall() {
+
+        }
+
+        public void highestAverageSoftDevelopment() {
+
+        }
+
+        public void highestAverageBigData() {
+
+        }
+        public void highestAverageProjectManagement() {
+
+        }
+        public void highestAverageDatabases() {
+
+        }
+}

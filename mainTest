@@ -1,0 +1,201 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Mark on 31/10/2018.
+ *
+ * OOP Assignment 1
+ *
+ * MainTest class is the main program which creates 20 students and randomly assigns them grades, streams and final year
+ * projects.
+ *
+ * MainTest class displays grade average and stream of each student. It then shows you the student witht the best
+ * average overall and also the best student of each stream
+ *
+ * MainTest class also displays warnings if students are under the grade average and lists all such students
+ */
+public class MainTest {
+
+
+     //   1 ArrayList and 3 arrays are created to store the fields of Student & Undergraduate
+
+
+    private static ArrayList<Undergraduate> listOfStudents = new ArrayList<Undergraduate>();
+
+    private static int[] studentGrades = {80, 50, 45, 80, 70, 90, 65, 60, 55, 40};
+
+    private static String[] streams = {"Software Development", "Databases", "Big Data", "Web Development"};
+
+    private static String[] finalProjects = {"Medical Research", "Farming Development", "Dating App", "Wine Database",
+    "Eye Scan Data", "Rugby Zone Stats"};
+
+    /* method which creates array of students names. It then adds the 20 students to the ArrayList listOfStudents using
+        get and set methods.
+    */
+
+    private static void createStudents() {
+        String[] studentNamesList = {"Mark Vickers", "Mel Brennan", "Ian Alvey", "Libby Keenen", "Paul Earls",
+                "Keith Walsh", "Cian Byrne", "Sean Dunne", "Peter Duffy", "Brian Doyle", "Kurt Byrne",
+                "Larry Maguire", "Barry Jameson", "Sue Jameson", "Kate Dunne", "Harry Walsh", "Drew Murphy",
+                "Paul Doyle", "Niall Bunn", "Bert Reynolds"};
+
+        for (int i = 0; i < 20; i++) {
+            listOfStudents.add(new Undergraduate());
+            listOfStudents.get(i).setName(studentNamesList[i]);
+
+            // creating a low and high number within a range to create random numbers to be assigned for student grades
+
+            int low = 30;
+            int high = 100;
+            int range = high - low + 1;
+            for (int j = 0; j < 10; j++) {
+                listOfStudents.get(i).setGradesArray((int )(Math.random() * range) + low);
+            }
+            /*adding necessary fields to the listOfStudents using get and set. Math.random is also used to assign
+            students streams and final projects randomly from a set array of options
+            */
+
+            listOfStudents.get(i).setStudentNumber((int)Math.random());
+            listOfStudents.get(i).setCourse("DT249");
+            listOfStudents.get(i).setCurrentYear(2);
+            listOfStudents.get(i).setRegistrationStatus(true);
+            listOfStudents.get(i).setStream(streams[(int) (Math.random() * 4)]);
+            listOfStudents.get(i).setFinalYearProject(finalProjects[(int) (Math.random()) * 6]);
+        }
+    }
+    /*
+        allStudentsGrades method uses the counter variable to iterate through all students and print out all required
+        fields and text
+     */
+
+    private static void allStudentsGrades() {
+        int counter = Undergraduate.getStudentCounter();
+        System.out.println("All Student Grades");
+        for (int i = 0; i < counter; i++) {
+            System.out.println("Name: " + listOfStudents.get(i).getName() + "\n" + "Stream: " +
+                    listOfStudents.get(i).getStream() + "\n" + "Mark: " + listOfStudents.get(i).calculateGradeAverage());
+            System.out.println("**********");
+        }
+    }
+
+    /*
+        findHighestAverages method uses the counter to iterate through all students. 2 new variables are initialised also.
+         startOfIndex makes us start of the start of the array while highestAverage is set to 0.
+
+     */
+    private static void findHighestAverages() {
+        int counter = Undergraduate.getStudentCounter();
+        int startOfIndex = -1;
+        int highestAverage = 0;
+
+        for (int i = 0; i < counter; i++) {
+            int findAverage = listOfStudents.get(i).calculateGradeAverage();
+
+            if (findAverage > highestAverage) {
+                startOfIndex = i;
+                highestAverage = findAverage;
+            }
+        }
+        // prints out the student with the highest average along with the grade
+
+        if (startOfIndex != -1) {
+            System.out.println("The student with the highest average is " + listOfStudents.get(startOfIndex).getName()
+                    + " and they scored an average of " + highestAverage);
+            System.out.println("**********");
+        }
+        // find the student of softDev stream with the best average
+
+        int softDevIndex = -1;
+        int softDevHighestAverage = 0;
+        for (int i = 0; i < counter; i++) {
+            if (listOfStudents.get(i).getStream() == streams[0] && softDevHighestAverage < highestAverage) {
+                softDevIndex = i;
+                softDevHighestAverage = highestAverage;
+            }
+        }
+        // prints softDev best student
+
+        if (softDevIndex != -1) {
+            System.out.println("The student with the highest average in Software Development is " + listOfStudents
+                    .get(softDevIndex).getName() + " and they scored an average of " + softDevHighestAverage);
+            System.out.println("**********");
+        }
+        // find the student of databases stream with the best average
+
+        int databasesIndex = -1;
+        int databasesHighestAverage = 0;
+        for (int i = 0; i < counter; i++) {
+            if (listOfStudents.get(i).getStream() == streams[1] && databasesHighestAverage < highestAverage) {
+                databasesIndex = i;
+                databasesHighestAverage = highestAverage;
+            }
+        }
+        // prints databases best student
+
+        if (databasesIndex != -1) {
+            System.out.println("The student with the highest average in Databases is " + listOfStudents
+                    .get(databasesIndex).getName() + " and they scored an average of " + databasesHighestAverage);
+            System.out.println("**********");
+        }
+        // find the student of bigData stream with the best average
+
+        int bigDataIndex = -1;
+        int bigDataHighestAverage = 0;
+        for (int i = 0; i < counter; i++) {
+            if (listOfStudents.get(i).getStream() == streams[2] && bigDataHighestAverage < highestAverage) {
+                bigDataIndex = i;
+                bigDataHighestAverage = highestAverage;
+            }
+        }
+        // prints bigData best student
+
+        if (bigDataIndex != -1) {
+            System.out.println("The student with the highest average in Big Data is " + listOfStudents
+                    .get(bigDataIndex).getName() + " and they scored an average of " + bigDataIndex);
+            System.out.println("**********");
+        }
+        // find the student of webDev stream with the best average
+
+        int webDevIndex = -1;
+        int webDevHighestAverage = 0;
+        for (int i = 0; i < counter; i++) {
+            if (listOfStudents.get(i).getStream() == streams[3] && webDevHighestAverage < highestAverage) {
+                webDevIndex = i;
+                webDevHighestAverage = highestAverage;
+            }
+        }
+        // prints webDev best student
+
+        if (webDevIndex != -1) {
+            System.out.println("The student with the highest average in Web Development is " + listOfStudents
+                    .get(webDevIndex).getName() + " and they scored an average of " + webDevIndex);
+            System.out.println("**********");
+        }
+    }
+
+        // method to display warnings of students who are below average.
+
+        private static void moreWarningsForLowGradeStudents() {
+            int counter  = Undergraduate.getStudentCounter();
+            System.out.println("WARNING");
+            System.out.println("The following student are below the grade average of D");
+            System.out.println("**********");
+            for (int i = 0; i < counter; i++) {
+                listOfStudents.get(i).belowAverageGrade();
+                }
+                //System.out.println(listOfStudents.get(i).displayInitials() + " You are the below the grade average");
+                System.out.println("**********");
+
+            }
+
+    // main method
+
+    public static void main(String[] args) {
+        createStudents();
+        allStudentsGrades();
+        findHighestAverages();
+        moreWarningsForLowGradeStudents();
+
+    }
+
+    }
+
